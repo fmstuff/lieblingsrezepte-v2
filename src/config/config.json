@@ -1,0 +1,35 @@
+{
+  "site": {
+    "title": "Lieblingsrezepte",
+    "base_url": "https://fmstuff.github.io/lieblingsrezepte",
+    "base_path": "/",
+    "trailing_slash": false,
+    "favicon": "/images/favicon.png",
+    "logo": "/images/logo.png",
+    "logo_width": "200",
+    "logo_height": "34",
+    "logo_text": "Lieblingsrezepte"
+  },
+
+  "settings": {
+    "pagination": 5,
+    "summary_length": 100
+  },
+
+  "metadata": {
+    "meta_author": "fmstuff",
+    "meta_image": "/images/og-image.png",
+    "meta_description": "Eine Sammlung unserer persönlichen Lieblingsrezepte."
+  },
+
+  "params": {
+    "contact_form_action": "#",
+    "copyright": "Copyright © 2023 by [fmstuff](https://github.com/fmstuff)"
+  },
+
+  "contactinfo": {
+    "address": "Munich, Germany",
+    "email": "---",
+    "phone": "---"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "main": [
+    {
+      "name": "Rezepte",
+      "url": "/"
+    },
+    {
+      "name": "Entdecken",
+      "url": "",
+      "hasChildren": true,
+      "children": [
+        {
+          "name": "Kategorien",
+          "url": "/categories"
+        },
+        {
+          "name": "Schlagwörter",
+          "url": "/tags"
+        }
+      ]
+    },
+    {
+      "name": "Über uns",
+      "url": "/about"
+    },
+    {
+      "name": "Kontakt",
+      "url": "/contact"
+    }
+  ],
+  "footer": [
+    {
+      "name": "Über",
+      "url": "/about"
+    },
+    {
+      "name": "Kontakt",
+      "url": "/contact"
+    },
+    {
+      "name": "Privacy Policy",
+      "url": "/privacy-policy"
+    }
+  ]
+}
