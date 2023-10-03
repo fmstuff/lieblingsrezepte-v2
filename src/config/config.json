@@ -1,8 +1,8 @@
 {
   "site": {
     "title": "Lieblingsrezepte",
-    "base_url": "https://fmstuff.github.io/lieblingsrezepte",
-    "base_path": "/",
+    "base_url": "https://fmstuff.github.io",
+    "base_path": "/lieblingsrezepte",
     "trailing_slash": false,
     "favicon": "/images/favicon.png",
     "logo": "/images/logo.png",

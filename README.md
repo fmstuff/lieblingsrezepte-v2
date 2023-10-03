@@ -9,7 +9,7 @@
 <!-- PROJECT LOGO -->
 <br />
 
-<div style="text-align: center">
+<div align="center">
   <a href="https://github.com/fmstuff/lieblingsrezepte">
     <img src="public/images/logo.png" width="260" alt="Logo">
   </a>
