@@ -1,5 +1,5 @@
 ---
-import { Image } from "@astrojs/image/components";
+import { Image } from "astro:assets";
 import config from "@config/config.json";
 import Share from "@components/Share.astro";
 import SimilarPosts from "@components/SimilarPosts.astro";
@@ -69,7 +69,7 @@ const {
               height={500}
               width={1000}
               alt={title}
-              class="rounded-lg"
+              class="h-80 w-full rounded-lg object-cover"
             />
           )
         }

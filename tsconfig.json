@@ -4,31 +4,16 @@
     "baseUrl": ".",
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
+    "types": ["astro/client"],
     "paths": {
-      "@layouts/*": [
-        "./src/layouts/*"
-      ],
-      "@components/*": [
-        "./src/layouts/components/*"
-      ],
-      "@partials/*": [
-        "./src/layouts/partials/*"
-      ],
-      "@shortcodes/*": [
-        "./src/layouts/shortcodes/*"
-      ],
-      "@config/*": [
-        "./src/config/*"
-      ],
-      "@content/*": [
-        "./src/content/*"
-      ],
-      "@styles/*": [
-        "./src/styles/*"
-      ],
-      "@lib/*": [
-        "./src/lib/*"
-      ]
+      "@layouts/*": ["./src/layouts/*"],
+      "@components/*": ["./src/layouts/components/*"],
+      "@partials/*": ["./src/layouts/partials/*"],
+      "@shortcodes/*": ["./src/layouts/shortcodes/*"],
+      "@config/*": ["./src/config/*"],
+      "@content/*": ["./src/content/*"],
+      "@styles/*": ["./src/styles/*"],
+      "@lib/*": ["./src/lib/*"]
     }
   }
 }

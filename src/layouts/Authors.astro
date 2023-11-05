@@ -1,5 +1,5 @@
 ---
-import { Image } from "@astrojs/image/components";
+import { Image } from "astro:assets";
 import { markdownify } from "@lib/utils/textConverter";
 import { BsArrowRightCircle } from "react-icons/bs/index.js";
 const { authors } = Astro.props;
@@ -20,14 +20,20 @@ const { authors } = Astro.props;
             />
           </div>
         )}
-        <h3 class="h4 mt-8 mb-3">
-          <a href={`/authors/${author.slug}`} class="block hover:text-primary transition duration-200">
+        <h3 class="h4 mb-3 mt-8">
+          <a
+            href={`/authors/${author.slug}`}
+            class="block transition duration-200 hover:text-primary"
+          >
             {author.data.title}
           </a>
         </h3>
         <p class="mb-3" set:text={markdownify(author.body.slice(0, 100))} />
-        <a href={`/authors/${author.slug}`} class="inline-flex items-center text-primary transition duration-200 hover:opacity-70">
-          Read More <BsArrowRightCircle className="inline ml-2" />
+        <a
+          href={`/authors/${author.slug}`}
+          class="inline-flex items-center text-primary transition duration-200 hover:opacity-70"
+        >
+          Read More <BsArrowRightCircle className="ml-2 inline" />
         </a>
       </div>
     ))

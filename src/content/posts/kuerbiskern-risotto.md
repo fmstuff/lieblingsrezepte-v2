@@ -4,7 +4,7 @@ description: "Geniales Risotto mit richtig Pfiff! Du bist auf der Suche nach neu
 date: 2023-09-01
 draft: false
 
-image: "/images/posts/kürbisrisotto.jpg"
+image: "/images/posts/kuerbisrisotto.jpg"
 categories: ["Hauptgericht"]
 tags: ["Gemüse", "Herbst", "Risotto"]
 
