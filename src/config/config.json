@@ -1,11 +1,11 @@
 {
   "site": {
     "title": "Lieblingsrezepte",
-    "base_url": "https://fmstuff.github.io/lieblingsrezepte-v2",
-    "base_path": "/",
+    "base_url": "https://fmstuff.github.io",
+    "base_path": "/lieblingsrezepte-v2",
     "trailing_slash": false,
-    "favicon": "/images/favicon.png",
-    "logo": "/images/logo.png",
+    "favicon": "/lieblingsrezepte-v2/images/favicon.png",
+    "logo": "/lieblingsrezepte-v2/images/logo.png",
     "logo_width": "200",
     "logo_height": "34",
     "logo_text": "Lieblingsrezepte"
@@ -18,7 +18,7 @@
 
   "metadata": {
     "meta_author": "fmstuff",
-    "meta_image": "/images/og-image.png",
+    "meta_image": "/lieblingsrezepte-v2/images/logo.png",
     "meta_description": "Eine Sammlung unserer persönlichen Lieblingsrezepte."
   },
 
