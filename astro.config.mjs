@@ -9,7 +9,7 @@ import config from "./src/config/config.json";
 export default defineConfig({
   site: config.site.base_url,
   base: config.site.base_path,
-  trailingSlash: config.site.trailing_slash ? "always" : "never",
+  trailingSlash: "ignore",
   integrations: [
     react(),
     sitemap(),

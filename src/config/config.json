@@ -3,7 +3,6 @@
     "title": "Lieblingsrezepte",
     "base_url": "https://fmstuff.github.io",
     "base_path": "/lieblingsrezepte-v2",
-    "trailing_slash": false,
     "favicon": "/lieblingsrezepte-v2/images/favicon.png",
     "logo": "/lieblingsrezepte-v2/images/logo.png",
     "logo_width": "200",
@@ -23,13 +22,6 @@
   },
 
   "params": {
-    "contact_form_action": "#",
     "copyright": "Copyright © 2023 by [fmstuff](https://github.com/fmstuff)"
-  },
-
-  "contactinfo": {
-    "address": "Munich, Germany",
-    "email": "---",
-    "phone": "---"
   }
 }

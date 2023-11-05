@@ -22,20 +22,12 @@
     {
       "name": "Über uns",
       "url": "/about"
-    },
-    {
-      "name": "Kontakt",
-      "url": "/contact"
     }
   ],
   "footer": [
     {
       "name": "Über",
       "url": "/about"
-    },
-    {
-      "name": "Kontakt",
-      "url": "/contact"
     },
     {
       "name": "Privacy Policy",

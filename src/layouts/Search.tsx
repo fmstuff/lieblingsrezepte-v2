@@ -4,7 +4,9 @@ import { humanize, slugify } from "@lib/utils/textConverter";
 import Fuse from "fuse.js";
 import { useEffect, useRef, useState } from "react";
 import { BiCalendarEdit, BiCategoryAlt } from "react-icons/bi/index.js";
+
 const { summary_length } = config.settings;
+const base_path = config.site.base_path;
 
 export type SearchItem = {
   slug: string;
@@ -94,12 +96,12 @@ export default function SearchBar({ searchList }: Props) {
           <div key={item.slug} className={"col-12 mb-8 sm:col-6"}>
             {item.data.image && (
               <a
-                href={`/${item.slug}`}
+                href={`${base_path}/${item.slug}`}
                 className="group block overflow-hidden rounded-lg hover:text-primary"
               >
                 <img
-                  className="w-full transition duration-300 group-hover:scale-[1.03]"
-                  src={item.data.image}
+                  className="h-64 w-full object-cover transition duration-300 group-hover:scale-[1.03]"
+                  src={`${base_path}/${item.data.image}`}
                   alt={item.data.title}
                   width={445}
                   height={230}
@@ -119,7 +121,7 @@ export default function SearchBar({ searchList }: Props) {
                     {item.data.categories.map((category: string, i: number) => (
                       <li className="inline-block">
                         <a
-                          href={`/categories/${slugify(category)}`}
+                          href={`${base_path}/categories/${slugify(category)}`}
                           className="mr-2 font-medium hover:text-primary"
                         >
                           {humanize(category)}
@@ -134,7 +136,7 @@ export default function SearchBar({ searchList }: Props) {
 
             <h3 className="mb-2">
               <a
-                href={`/${item.slug}`}
+                href={`${base_path}/${item.slug}`}
                 className="block transition duration-300 hover:text-primary"
               >
                 {item.data.title}
