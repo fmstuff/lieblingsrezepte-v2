@@ -4,10 +4,9 @@ import config from "@config/config.json";
 import Share from "@components/Share.astro";
 import SimilarPosts from "@components/SimilarPosts.astro";
 import { getSinglePage } from "@lib/contentParser.astro";
-import dateFormat from "@lib/utils/dateFormat";
 import similerItems from "@lib/utils/similarItems";
 import { humanize, markdownify, slugify } from "@lib/utils/textConverter";
-import { BiCalendarEdit, BiCategoryAlt } from "react-icons/bi/index.js";
+import { BiCategoryAlt, BiPurchaseTagAlt } from "react-icons/bi/index.js";
 
 const base_path = config.site.base_path;
 const posts = await getSinglePage("posts");
@@ -17,10 +16,8 @@ const { Content } = await post.render();
 const {
   title,
   description,
-  authors,
   categories,
   image,
-  date,
   tags,
   zubereitungszeit,
   zutaten,
@@ -31,13 +28,10 @@ const {
 <section class="section">
   <div class="container">
     <article class="row justify-center">
+      <!-- HEADING, CATEGORIE, TAGS -->
       <div class="text-center md:col-10">
         <h1 set:html={markdownify(title)} class="h2" />
         <ul class="mt-4 flex flex-wrap items-center justify-center text-text">
-          <li class="mx-3 flex flex-wrap items-center font-medium">
-            <BiCalendarEdit className="mr-1 h-5 w-5 text-gray-600" />
-            <>{dateFormat(date)}</>
-          </li>
           <li class="mx-3 flex flex-wrap items-center">
             <BiCategoryAlt className="mr-1 h-[18px] w-[18px] text-gray-600" />
             <>
@@ -50,7 +44,29 @@ const {
                         class="mr-2 font-medium hover:text-primary"
                       >
                         {humanize(category)}
-                        {i !== post.data.categories.length - 1 && ","}
+                        {i !== categories.length - 1 && ","}
+                      </a>
+                    </li>
+                  ))
+                }
+              </ul>
+            </>
+          </li>
+          <li class="mx-3 flex flex-wrap items-center">
+            <BiPurchaseTagAlt
+              className="mr-1 h-[18px] w-[18px] text-gray-600"
+            />
+            <>
+              <ul>
+                {
+                  tags.map((tag: string, i: number) => (
+                    <li class="inline-block">
+                      <a
+                        href={`${base_path}/tags/${slugify(tag)}`}
+                        class="mr-2 font-medium hover:text-primary"
+                      >
+                        {humanize(tag)}
+                        {i !== tags.length - 1 && ","}
                       </a>
                     </li>
                   ))
@@ -61,6 +77,7 @@ const {
         </ul>
       </div>
 
+      <!-- HERO IMAGE -->
       <div class="col-12 mb-2 mt-8">
         {
           image && (
@@ -75,21 +92,22 @@ const {
         }
       </div>
 
-      <div class="md:col-10">
-        <div class="mt-8 flex flex-wrap items-center justify-between">
-          <div>
-            <div class="text-center">
+      <div class="sm:col-10">
+        <!-- KEY FACTS -->
+        <div class="flex flex-col items-center justify-between sm:flex-row">
+          <div class="mt-8">
+            <div class="sm:basis-ful text-center">
               <p class="text-xs uppercase tracking-widest">Anzahl Zutaten</p>
               <p class="h3 font-semibold">{zutaten?.length ?? 0}</p>
             </div>
           </div>
-          <div>
+          <div class="mt-8">
             <div class="text-center">
               <p class="text-xs uppercase tracking-widest">Zubereitungszeit</p>
               <p class="h3 font-semibold">{zubereitungszeit}</p>
             </div>
           </div>
-          <div class="level-item has-text-centered">
+          <div class="level-item has-text-centered mt-8">
             <div class="text-center">
               <p class="text-xs uppercase tracking-widest">Aufwand</p>
               <p class="h3 font-semibold">{aufwand}</p>
@@ -97,9 +115,40 @@ const {
           </div>
         </div>
 
+        <!-- DESCRIPTION -->
         <div class="content mb-8 mt-10 text-left">
           <p class="text-lg italic">{description}</p>
         </div>
+
+        <!-- INGREDIENTS - TODO -->
+        <div>
+          <h2>Zutaten</h2>
+          <table class="mt-8 table-auto border-separate border-spacing-x-4">
+            <thead>
+              <tr>
+                <th class="text-right">Menge</th>
+                <th class="text-left">Zutat</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                zutaten.map(
+                  (zutat: { title: string; amount: number; unit: string }) => (
+                    <tr class="odd:bg-slate-100">
+                      <td class="text-right">
+                        {zutat.amount && zutat.amount}
+                        {zutat.unit && " " + zutat.unit}
+                      </td>
+                      <td>{zutat.title}</td>
+                    </tr>
+                  )
+                )
+              }
+            </tbody>
+          </table>
+        </div>
+
+        <!-- INSTRUCTIONS -->
         <div class="content mb-16 text-left">
           <Content />
         </div>

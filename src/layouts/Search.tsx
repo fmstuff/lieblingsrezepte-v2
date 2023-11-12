@@ -3,7 +3,11 @@ import dateFormat from "@lib/utils/dateFormat";
 import { humanize, slugify } from "@lib/utils/textConverter";
 import Fuse from "fuse.js";
 import { useEffect, useRef, useState } from "react";
-import { BiCalendarEdit, BiCategoryAlt } from "react-icons/bi/index.js";
+import {
+  BiCalendarEdit,
+  BiCategoryAlt,
+  BiPurchaseTagAlt,
+} from "react-icons/bi/index.js";
 
 const { summary_length } = config.settings;
 const base_path = config.site.base_path;
@@ -71,7 +75,7 @@ export default function SearchBar({ searchList }: Props) {
     <div className="min-h-[45vh]">
       <input
         className="form-input w-full text-center"
-        placeholder="Gib hier deine Suchbegriffe ein, um Rezepte zu finden"
+        placeholder="Suche nach Rezepten..."
         type="text"
         name="search"
         value={inputVal}
@@ -110,10 +114,6 @@ export default function SearchBar({ searchList }: Props) {
             )}
 
             <ul className="mb-4 mt-6 flex flex-wrap items-center text-text">
-              <li className="mr-5 flex flex-wrap items-center font-medium">
-                <BiCalendarEdit className="mr-1 h-5 w-5 text-gray-600" />
-                <>{dateFormat(item.data.date)}</>
-              </li>
               <li className="mr-5 flex flex-wrap items-center">
                 <BiCategoryAlt className="mr-1 h-[18px] w-[18px] text-gray-600" />
                 <>
@@ -126,6 +126,24 @@ export default function SearchBar({ searchList }: Props) {
                         >
                           {humanize(category)}
                           {i !== item.data.categories.length - 1 && ","}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              </li>
+              <li class="mr-5 flex flex-wrap items-center">
+                <BiPurchaseTagAlt className="mr-1 h-[18px] w-[18px] text-gray-600" />
+                <>
+                  <ul>
+                    {item.data.tags.map((tag: string, i: number) => (
+                      <li class="inline-block">
+                        <a
+                          href={`${base_path}/tags/${slugify(tag)}`}
+                          className="mr-2 font-medium hover:text-primary"
+                        >
+                          {humanize(tag)}
+                          {i !== item.data.tags.length - 1 && ","}
                         </a>
                       </li>
                     ))}

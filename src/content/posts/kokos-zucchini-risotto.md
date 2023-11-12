@@ -1,5 +1,7 @@
 ---
 title: "Asiatisches Kokos-Zucchini-Risotto"
+description: "Italienisches Risotto trifft auf asiatische Noten und heraus kommt ein herrlich leckeres, leichtes, vegetarisches Risotto."
+
 image: "/images/posts/kokos-zucchini-risotto.jpg"
 date: 2023-08-26
 draft: false

@@ -4,7 +4,9 @@ import { getTaxonomy } from "@lib/taxonomyParser.astro";
 import { humanize } from "@lib/utils/textConverter";
 
 import { FaHashtag } from "react-icons/fa/index.js";
+import config from "@config/config.json";
 
+const base_path = config.site.base_path;
 const tags = await getTaxonomy("posts", "tags");
 ---
 
@@ -17,10 +19,10 @@ const tags = await getTaxonomy("posts", "tags");
           tags.map((tag) => (
             <li class="inline-block">
               <a
-                href={`/tags/${tag}`}
-                class="rounded-lg bg-theme-light px-4 py-2 text-dark transition hover:bg-primary hover:text-white flex items-center group"
+                href={`${base_path}/tags/${tag}`}
+                class="group flex items-center rounded-lg bg-theme-light px-4 py-2 text-dark transition hover:bg-primary hover:text-white"
               >
-                <FaHashtag className="mr-1 text-primary group-hover:text-white transition" />
+                <FaHashtag className="mr-1 text-primary transition group-hover:text-white" />
                 <>{humanize(tag || "")}</>
               </a>
             </li>
