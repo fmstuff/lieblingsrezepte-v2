@@ -7,7 +7,7 @@ draft: false
 image: "/images/posts/risotto-style-pasta.jpg"
 
 categories: ["Hauptgericht"]
-tags: ["pasta"]
+tags: ["Pasta", "Nudeln"]
 
 zubereitungszeit: 30 Minuten
 aufwand: mittel

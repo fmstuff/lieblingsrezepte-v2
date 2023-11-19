@@ -6,7 +6,7 @@ draft: false
 
 image: "/images/posts/koefte-joghurt-dip-tabouleh.jpg"
 categories: ["Hauptgericht"]
-tags: [lowcarb]
+tags: ["lowcarb"]
 
 zubereitungszeit: 30 Minuten
 aufwand: leicht

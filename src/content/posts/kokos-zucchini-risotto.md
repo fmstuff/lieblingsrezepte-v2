@@ -7,7 +7,7 @@ date: 2023-08-26
 draft: false
 
 categories: ["Hauptgericht"]
-tags: [vegetarisch]
+tags: ["vegetarisch"]
 
 zubereitungszeit: 40 Minuten
 aufwand: mittel
