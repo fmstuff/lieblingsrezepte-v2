@@ -21,6 +21,7 @@ const {
   description,
   categories,
   image,
+  personen,
   tags,
   zubereitungszeit,
   zutaten,
@@ -109,7 +110,7 @@ const {
         </div>
 
         <!-- INGREDIENTS - TODO -->
-        <Ingeredients zutaten={zutaten} />
+        <Ingeredients people={personen} ingredients={zutaten} />
 
         <!-- INSTRUCTIONS -->
         <div class="content mb-16 text-left">

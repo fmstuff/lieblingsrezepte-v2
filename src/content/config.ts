@@ -14,6 +14,7 @@ const postsCollection = defineCollection({
     draft: z.boolean().optional(),
     zubereitungszeit: z.string().optional(),
     aufwand: z.string().optional(),
+    personen: z.number().int().optional(),
     zutaten: z
       .array(
         z.object({

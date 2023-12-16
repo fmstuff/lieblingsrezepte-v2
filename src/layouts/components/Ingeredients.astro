@@ -1,18 +1,23 @@
 ---
 export interface Props {
-  zutaten: {
+  people: number;
+  ingredients: {
     title: string;
     amount: number;
     unit: string;
   }[];
 }
 
-const { zutaten } = Astro.props as Props;
+const { ingredients, people } = Astro.props as Props;
 ---
 
 <div>
   <h2>Zutaten</h2>
-  <table class="mt-8 table-auto border-separate border-spacing-x-4">
+  <p class="mt-4 text-lg text-gray-500">
+    Für {people}
+    {people === 1 ? " Person" : " Personen"}
+  </p>
+  <table class="mt-4 table-auto border-separate border-spacing-x-4">
     <thead>
       <tr>
         <th class="text-right">Menge</th>
@@ -21,14 +26,14 @@ const { zutaten } = Astro.props as Props;
     </thead>
     <tbody>
       {
-        zutaten.map(
-          (zutat: { title: string; amount: number; unit: string }) => (
+        ingredients.map(
+          (ingredient: { title: string; amount: number; unit: string }) => (
             <tr class="odd:bg-slate-100">
               <td class="text-right">
-                {zutat.amount && zutat.amount}
-                {zutat.unit && " " + zutat.unit}
+                {ingredient.amount && ingredient.amount}
+                {ingredient.unit && " " + ingredient.unit}
               </td>
-              <td>{zutat.title}</td>
+              <td>{ingredient.title}</td>
             </tr>
           )
         )
