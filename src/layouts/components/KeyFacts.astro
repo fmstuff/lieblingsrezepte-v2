@@ -1,0 +1,30 @@
+---
+export interface Props {
+  zutaten: any[];
+  zubereitungszeit: string;
+  aufwand: string;
+}
+
+const { zutaten, zubereitungszeit, aufwand } = Astro.props as Props;
+---
+
+<div class="flex flex-col items-center justify-between sm:flex-row">
+  <div class="mt-8">
+    <div class="sm:basis-ful text-center">
+      <p class="text-xs uppercase tracking-widest">Anzahl Zutaten</p>
+      <p class="h3 font-semibold">{zutaten?.length ?? 0}</p>
+    </div>
+  </div>
+  <div class="mt-8">
+    <div class="text-center">
+      <p class="text-xs uppercase tracking-widest">Zubereitungszeit</p>
+      <p class="h3 font-semibold">{zubereitungszeit}</p>
+    </div>
+  </div>
+  <div class="level-item has-text-centered mt-8">
+    <div class="text-center">
+      <p class="text-xs uppercase tracking-widest">Aufwand</p>
+      <p class="h3 font-semibold">{aufwand}</p>
+    </div>
+  </div>
+</div>
