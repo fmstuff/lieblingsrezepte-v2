@@ -11,33 +11,114 @@ export interface Props {
 const { ingredients, people } = Astro.props as Props;
 ---
 
-<div>
-  <h2>Zutaten</h2>
-  <p class="mt-4 text-lg text-gray-500">
-    Für {people}
-    {people === 1 ? " Person" : " Personen"}
-  </p>
-  <table class="mt-4 table-auto border-separate border-spacing-x-4">
-    <thead>
-      <tr>
-        <th class="text-right">Menge</th>
-        <th class="text-left">Zutat</th>
-      </tr>
-    </thead>
-    <tbody>
-      {
-        ingredients.map(
-          (ingredient: { title: string; amount: number; unit: string }) => (
-            <tr class="odd:bg-slate-100">
-              <td class="text-right">
-                {ingredient.amount && ingredient.amount}
-                {ingredient.unit && " " + ingredient.unit}
-              </td>
-              <td>{ingredient.title}</td>
-            </tr>
+<recipe-list data-persons={people}>
+  <div>
+    <h2>Zutaten</h2>
+    <p class="mt-4 text-lg text-gray-500">
+      Portionen: <span id="numPersons">?</span>
+
+      <button
+        id="minusButton"
+        class="ml-4 rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
+      >
+        -</button
+      >
+      <button
+        id="plusButton"
+        class="ml-2 rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
+      >
+        +</button
+      >
+    </p>
+    <table class="mt-4 table-auto border-separate border-spacing-x-4">
+      <thead>
+        <tr>
+          <th class="text-right">Menge</th>
+          <th class="text-left">Zutat</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          ingredients.map(
+            (ingredient: { title: string; amount: number; unit: string }) => (
+              <tr class="odd:bg-slate-100">
+                <td class="text-right">
+                  <span
+                    class="ingredientAmount"
+                    data-initial-amount={ingredient.amount && ingredient.amount}
+                  >
+                    ??
+                  </span>
+                  {ingredient.unit && " " + ingredient.unit}
+                </td>
+                <td>{ingredient.title}</td>
+              </tr>
+            )
           )
-        )
-      }
-    </tbody>
-  </table>
-</div>
+        }
+      </tbody>
+    </table>
+  </div>
+</recipe-list>
+
+<script>
+  class RecipeList extends HTMLElement {
+    constructor() {
+      super();
+      const initialNumPersons = parseInt(this.dataset.persons ?? "1");
+
+      const numPersonsSpan = this.querySelector("#numPersons")!;
+      const plusButton = this.querySelector("#plusButton")!;
+      const minusButton = this.querySelector("#minusButton")!;
+      const ingredientAmounts = this.querySelectorAll(".ingredientAmount")!;
+
+      numPersonsSpan.textContent = initialNumPersons.toString();
+      ingredientAmounts.forEach((ingredientAmount) => {
+        const amount = ingredientAmount.getAttribute("data-initial-amount");
+        ingredientAmount.textContent = amount ?? "";
+      });
+
+      plusButton.addEventListener("click", () => {
+        if (parseInt(numPersonsSpan.textContent!) === 15) {
+          return;
+        }
+        const newNumPersons = parseInt(numPersonsSpan.textContent!) + 1;
+
+        numPersonsSpan.textContent = newNumPersons.toString();
+
+        ingredientAmounts.forEach((ingredientAmount) => {
+          const initialAmount = ingredientAmount.getAttribute(
+            "data-initial-amount"
+          );
+          if (initialAmount) {
+            const updatedAmount =
+              (parseFloat(initialAmount) * newNumPersons) / initialNumPersons;
+            ingredientAmount.textContent = updatedAmount.toString();
+          }
+        });
+      });
+
+      minusButton.addEventListener("click", () => {
+        if (parseInt(numPersonsSpan.textContent!) === 1) {
+          return;
+        }
+        const newNumPersons = parseInt(numPersonsSpan.textContent!) - 1;
+
+        numPersonsSpan.textContent = newNumPersons.toString();
+
+        ingredientAmounts.forEach((ingredientAmount) => {
+          const initialAmount = ingredientAmount.getAttribute(
+            "data-initial-amount"
+          );
+          if (initialAmount) {
+            const updatedAmount =
+              (parseFloat(initialAmount) * newNumPersons) / initialNumPersons;
+            ingredientAmount.textContent = updatedAmount.toString();
+          }
+        });
+      });
+    }
+  }
+
+  customElements.define("recipe-list", RecipeList);
+</script>
