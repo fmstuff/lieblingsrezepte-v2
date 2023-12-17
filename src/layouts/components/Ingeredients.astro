@@ -1,6 +1,7 @@
 ---
+import Button from "./Button.astro";
 export interface Props {
-  people: number;
+  servings: number;
   ingredients: {
     title: string;
     amount: number;
@@ -8,27 +9,16 @@ export interface Props {
   }[];
 }
 
-const { ingredients, people } = Astro.props as Props;
+const { ingredients, servings } = Astro.props as Props;
 ---
 
-<recipe-list data-persons={people}>
+<recipe-list data-servings={servings}>
   <div>
     <h2>Zutaten</h2>
     <p class="mt-4 text-lg text-gray-500">
-      Portionen: <span id="numPersons">?</span>
-
-      <button
-        id="minusButton"
-        class="ml-4 rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
-      >
-        -</button
-      >
-      <button
-        id="plusButton"
-        class="ml-2 rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
-      >
-        +</button
-      >
+      Portionen: <span id="numServings">?</span>
+      <Button id="minusButton">-</Button>
+      <Button id="plusButton">+</Button>
     </p>
     <table class="mt-4 table-auto border-separate border-spacing-x-4">
       <thead>
@@ -65,57 +55,50 @@ const { ingredients, people } = Astro.props as Props;
   class RecipeList extends HTMLElement {
     constructor() {
       super();
-      const initialNumPersons = parseInt(this.dataset.persons ?? "1");
+      const initialServings = parseInt(this.dataset.servings ?? "1");
 
-      const numPersonsSpan = this.querySelector("#numPersons")!;
+      const numServingsSpan = this.querySelector("#numServings")!;
       const plusButton = this.querySelector("#plusButton")!;
       const minusButton = this.querySelector("#minusButton")!;
-      const ingredientAmounts = this.querySelectorAll(".ingredientAmount")!;
+      const ingredientAmountSpans = this.querySelectorAll(".ingredientAmount")!;
 
-      numPersonsSpan.textContent = initialNumPersons.toString();
-      ingredientAmounts.forEach((ingredientAmount) => {
-        const amount = ingredientAmount.getAttribute("data-initial-amount");
-        ingredientAmount.textContent = amount ?? "";
+      numServingsSpan.textContent = initialServings.toString();
+      ingredientAmountSpans.forEach((ingredientAmountSpan) => {
+        const amount = ingredientAmountSpan.getAttribute("data-initial-amount");
+        ingredientAmountSpan.textContent = amount ?? "";
       });
 
-      plusButton.addEventListener("click", () => {
-        if (parseInt(numPersonsSpan.textContent!) === 15) {
-          return;
-        }
-        const newNumPersons = parseInt(numPersonsSpan.textContent!) + 1;
-
-        numPersonsSpan.textContent = newNumPersons.toString();
-
-        ingredientAmounts.forEach((ingredientAmount) => {
+      const updateIngredientAmountSpans = (newNumServings: number) => {
+        ingredientAmountSpans.forEach((ingredientAmount) => {
           const initialAmount = ingredientAmount.getAttribute(
             "data-initial-amount"
           );
           if (initialAmount) {
             const updatedAmount =
-              (parseFloat(initialAmount) * newNumPersons) / initialNumPersons;
+              (parseFloat(initialAmount) * newNumServings) / initialServings;
             ingredientAmount.textContent = updatedAmount.toString();
           }
         });
+      };
+
+      plusButton.addEventListener("click", () => {
+        if (parseInt(numServingsSpan.textContent!) === 15) {
+          return;
+        }
+        const newNumServings = parseInt(numServingsSpan.textContent!) + 1;
+        numServingsSpan.textContent = newNumServings.toString();
+
+        updateIngredientAmountSpans(newNumServings);
       });
 
       minusButton.addEventListener("click", () => {
-        if (parseInt(numPersonsSpan.textContent!) === 1) {
+        if (parseInt(numServingsSpan.textContent!) === 1) {
           return;
         }
-        const newNumPersons = parseInt(numPersonsSpan.textContent!) - 1;
+        const newNumServings = parseInt(numServingsSpan.textContent!) - 1;
+        numServingsSpan.textContent = newNumServings.toString();
 
-        numPersonsSpan.textContent = newNumPersons.toString();
-
-        ingredientAmounts.forEach((ingredientAmount) => {
-          const initialAmount = ingredientAmount.getAttribute(
-            "data-initial-amount"
-          );
-          if (initialAmount) {
-            const updatedAmount =
-              (parseFloat(initialAmount) * newNumPersons) / initialNumPersons;
-            ingredientAmount.textContent = updatedAmount.toString();
-          }
-        });
+        updateIngredientAmountSpans(newNumServings);
       });
     }
   }

@@ -2,18 +2,15 @@
 title: "Kaiserschmarrn (à la Bürgelalm)"
 description: "Der beste Kaiserschmarrn der Welt - einfach & einfach gut!"
 date: 2023-08-17
-draft: false
-
 image: "/images/posts/kaiserschmarrn.jpg"
 
 categories: ["Nachspeise"]
 tags: ["vegetarisch", "süß", "einfach"]
 
-zubereitungszeit: "15 Minuten"
-aufwand: "leicht"
-
-personen: 2
-zutaten:
+preptime: "15 Minuten"
+effort: "leicht"
+servings: 2
+ingredients:
   - title: "Milch"
     amount: 2
     unit: "Tassen"

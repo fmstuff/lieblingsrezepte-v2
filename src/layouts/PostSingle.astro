@@ -19,13 +19,13 @@ const { Content } = await post.render();
 const {
   title,
   description,
-  categories,
   image,
-  personen,
+  categories,
   tags,
-  zubereitungszeit,
-  zutaten,
-  aufwand,
+  preptime,
+  effort,
+  servings,
+  ingredients,
 } = post.data;
 ---
 
@@ -99,9 +99,9 @@ const {
       <div class="sm:col-10">
         <!-- KEY FACTS -->
         <KeyFacts
-          zutaten={zutaten}
-          zubereitungszeit={zubereitungszeit}
-          aufwand={aufwand}
+          zutaten={ingredients}
+          zubereitungszeit={preptime}
+          aufwand={effort}
         />
 
         <!-- DESCRIPTION -->
@@ -110,7 +110,7 @@ const {
         </div>
 
         <!-- INGREDIENTS - TODO -->
-        <Ingeredients people={personen} ingredients={zutaten} />
+        <Ingeredients servings={servings} ingredients={ingredients} />
 
         <!-- INSTRUCTIONS -->
         <div class="content mb-16 text-left">

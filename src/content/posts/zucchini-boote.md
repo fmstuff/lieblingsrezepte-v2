@@ -2,21 +2,15 @@
 title: "Gefüllte Zucchini Boote"
 description: 'Leckere Zucchini gefüllt mit allerlei guten Dingen. Herrlich geeignet, um auch mal in der Küche "aufzuräumen" (Stichwort: Resteverwertung).'
 date: 2023-06-23
-draft: false
-
 image: "/images/posts/zucchini-boote.jpg"
 
 categories: ["Hauptgericht"]
-tags: ["Gemüse", "Sommer"]
+tags: ["Gemüse", "Sommer", "vegetarisch"]
 
-zubereitungszeit: 60 Minuten
-aufwand: mittel
-
-vegetarisch: ja
-
-personen: 2
-
-zutaten:
+preptime: 60 Minuten
+effort: mittel
+servings: 2
+ingredients:
   - title: Zucchini (groß)
     amount: 1
   - title: Paprika

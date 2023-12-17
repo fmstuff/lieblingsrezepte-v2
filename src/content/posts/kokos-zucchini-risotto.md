@@ -1,22 +1,16 @@
 ---
 title: "Asiatisches Kokos-Zucchini-Risotto"
 description: "Italienisches Risotto trifft auf asiatische Noten und heraus kommt ein herrlich leckeres, leichtes, vegetarisches Risotto."
-
-image: "/images/posts/kokos-zucchini-risotto.jpg"
 date: 2023-08-26
-draft: false
+image: "/images/posts/kokos-zucchini-risotto.jpg"
 
 categories: ["Hauptgericht"]
 tags: ["vegetarisch"]
 
-zubereitungszeit: 40 Minuten
-aufwand: mittel
-
-vegetarisch: ja
-lowcarb: nein
-
-personen: 4
-zutaten:
+preptime: 40 Minuten
+effort: mittel
+servings: 4
+ingredients:
   - title: Zwiebeln
     amount: 2
   - title: Zucchinis

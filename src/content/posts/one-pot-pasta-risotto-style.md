@@ -2,21 +2,15 @@
 title: "One-Pot Nudeln Risotto Style mit Salsiccia, Zucchini und Käse"
 description: "Absolutes Soul-Food! Macht glücklich, versprochen!"
 date: 2023-09-08
-draft: false
-
 image: "/images/posts/risotto-style-pasta.jpg"
 
 categories: ["Hauptgericht"]
 tags: ["Pasta", "Nudeln"]
 
-zubereitungszeit: 30 Minuten
-aufwand: mittel
-
-lowcarb: nein
-vegetarisch: nein
-
-personen: 2
-zutaten:
+preptime: 30 Minuten
+effort: mittel
+servings: 2
+ingredients:
   - title: Salsiccia
     amount: 250
     unit: g

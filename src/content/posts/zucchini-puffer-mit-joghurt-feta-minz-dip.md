@@ -2,17 +2,15 @@
 title: "Zucchini Puffer mit Joghurt-Feta-Minz Dip"
 description: "Lecker frische Puffer aus Zucchini und Ei mit sensationellem, minzigen Dip - einfach köstlich!"
 date: 2022-07-15
-
 image: "/images/posts/zucchini-puffer.jpg"
 
 categories: ["Vorspeise", "Hauptgericht"]
 tags: ["vegetarisch", "lowcarb", "Sommer", "Frühling", "Gemüse"]
 
-zubereitungszeit: 45 Minuten
-aufwand: mittel
-
-personen: 2
-zutaten:
+preptime: 45 Minuten
+effort: mittel
+servings: 2
+ingredients:
   - title: Ei
     amount: 1
   - title: Feta

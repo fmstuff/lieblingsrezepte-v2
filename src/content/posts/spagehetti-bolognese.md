@@ -2,18 +2,15 @@
 title: "Spaghetti Bolognese (à la Mama)"
 description: "Einfach zuzubereiten und einfach lecker - so müssen Spaghetti Bolognese schmecken! 😋 Wie bei Mama! Ein tolles Gericht für einen gemütlichen, verregneten Sonntag."
 date: 2023-11-19
-draft: false
-
 image: "/images/posts/spaghetti-bolognese.jpg"
 
 categories: ["Hauptspeise"]
 tags: ["einfach", "herzhaft", "Nudeln", "Pasta"]
 
-zubereitungszeit: "30 Minuten"
-aufwand: "mittel"
-
-personen: 2
-zutaten:
+preptime: "30 Minuten"
+effort: "mittel"
+servings: 2
+ingredients:
   - title: "Hackfleisch"
     amount: 400
     unit: "g"

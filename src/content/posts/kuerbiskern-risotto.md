@@ -2,20 +2,15 @@
 title: "Kürbisrisotto mit Serrano-Chips & Cashewkernen"
 description: "Geniales Risotto mit richtig Pfiff! Du bist auf der Suche nach neuen Ideen für die Verarbeitung der Kürbisse in deiner Küche? Probier's mal hiermit!"
 date: 2023-09-01
-draft: false
-
 image: "/images/posts/kuerbisrisotto.jpg"
+
 categories: ["Hauptgericht"]
 tags: ["Gemüse", "Herbst", "Risotto"]
 
-zubereitungszeit: 1 Stunde
-aufwand: mittel
-
-lowcarb: nein
-vegetarisch: nein
-
-personen: 4
-zutaten:
+preptime: 1 Stunde
+effort: mittel
+servings: 4
+ingredients:
   - title: Hokkaido Kürbis
     amount: 1
     unit:

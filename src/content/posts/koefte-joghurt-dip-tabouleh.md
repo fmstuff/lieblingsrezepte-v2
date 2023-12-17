@@ -2,20 +2,15 @@
 title: "Köfte mit Joghurt-Dip und lowcarb Tabouleh"
 description: "Genial wüziges Rezept mit so gut wie keinen Kohlenhydraten, das dich trotzdem garntiert satt & glücklich macht!"
 date: 2023-08-21
-draft: false
-
 image: "/images/posts/koefte-joghurt-dip-tabouleh.jpg"
+
 categories: ["Hauptgericht"]
 tags: ["lowcarb"]
 
-zubereitungszeit: 30 Minuten
-aufwand: leicht
-
-lowcarb: ja
-vegetarisch: nein
-
-personen: 2
-zutaten:
+preptime: 30 Minuten
+effort: leicht
+servings: 2
+ingredients:
   - title: Petersilie
     amount: 30
     unit: g

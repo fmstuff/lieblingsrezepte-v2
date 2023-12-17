@@ -3,19 +3,17 @@ import { defineCollection, z } from "astro:content";
 // Post collection schema
 const postsCollection = defineCollection({
   schema: z.object({
-    id: z.string().optional(),
     title: z.string(),
-    meta_title: z.string().optional(),
-    description: z.string().optional(),
+    description: z.string(),
     date: z.date().optional(),
-    image: z.string().optional(),
-    categories: z.array(z.string()).default(["others"]),
-    tags: z.array(z.string()).default(["others"]),
     draft: z.boolean().optional(),
-    zubereitungszeit: z.string().optional(),
-    aufwand: z.string().optional(),
-    personen: z.number().int().optional(),
-    zutaten: z
+    image: z.string().optional(),
+    categories: z.array(z.string()),
+    tags: z.array(z.string()),
+    preptime: z.string(),
+    effort: z.string(),
+    servings: z.number().int(),
+    ingredients: z
       .array(
         z.object({
           title: z.string(),
