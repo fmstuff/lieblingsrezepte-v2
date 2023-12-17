@@ -1,11 +1,11 @@
 ---
-title: "Asiatisches Kokos-Zucchini-Risotto"
-description: "Italienisches Risotto trifft auf asiatische Noten und heraus kommt ein herrlich leckeres, leichtes, vegetarisches Risotto."
+title: Asiatisches Kokos-Zucchini-Risotto
+description: Italienisches Risotto trifft auf asiatische Noten und heraus kommt ein herrlich leckeres, leichtes, vegetarisches Risotto.
 date: 2023-08-26
-image: "/images/posts/kokos-zucchini-risotto.jpg"
+image: /images/posts/kokos-zucchini-risotto.jpg
 
-categories: ["Hauptgericht"]
-tags: ["vegetarisch"]
+categories: [Hauptgericht]
+tags: [vegetarisch, Reis, Gemüse]
 
 preptime: 40 Minuten
 effort: mittel
@@ -15,7 +15,6 @@ ingredients:
     amount: 2
   - title: Zucchinis
     amount: 2
-
   - title: Ingwer
     amount: 20
     unit: g
@@ -30,7 +29,6 @@ ingredients:
     unit: Liter
   - title: Knoblauch Zehen
     amount: 2
-
   - title: Erdnussöl
   - title: Salz
 ---
@@ -50,9 +48,7 @@ Risotto kochen:
 - Kokosmilch dazugeben und auf kleiner Flamme warmhalten.<br><br>
 - Zwiebeln, Knoblauch und Ingwer in einem Topf mit Erdnussöl anschwitzen.
 - Risottoreis dazugeben und 1 bis 3 Minuten mit anschwitzen bis er schön glasig ist.<br><br>
-
 - Über 20 Minuten hinweg nach und nach die Kokos-Brühe dazugeben und einköcheln lassen bis das Risotto schön cremig & schlonzig ist.
-
 - Zwischendurch, nach ca. 10 Minuten Kochzeit die Zuchhiniwürfel mit zum Risotto geben.
 
 Servieren & genießen 😍 🍚

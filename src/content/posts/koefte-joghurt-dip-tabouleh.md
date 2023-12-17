@@ -1,11 +1,11 @@
 ---
-title: "Köfte mit Joghurt-Dip und lowcarb Tabouleh"
-description: "Genial wüziges Rezept mit so gut wie keinen Kohlenhydraten, das dich trotzdem garntiert satt & glücklich macht!"
+title: Köfte mit Joghurt-Dip und lowcarb Tabouleh
+description: Genial wüziges Rezept mit so gut wie keinen Kohlenhydraten, das dich trotzdem garntiert satt & glücklich macht!
 date: 2023-08-21
-image: "/images/posts/koefte-joghurt-dip-tabouleh.jpg"
+image: /images/posts/koefte-joghurt-dip-tabouleh.jpg
 
-categories: ["Hauptgericht"]
-tags: ["lowcarb"]
+categories: [Hauptgericht]
+tags: [lowcarb, herzhaft, Fleisch, Gemüse, Salat]
 
 preptime: 30 Minuten
 effort: leicht
@@ -41,17 +41,19 @@ ingredients:
   - title: Olivenöl
     amount: EL
     unit: 3
-  - title: Salz
-  - title: Pfeffer
   - title: Knoblauch
     amount: 1
     unit: Zehe(n)
   - title: Kreuzkümmel (Cumin)
     amount: 1
     unit: TL
+  - title: Salz
+  - title: Pfeffer
 ---
 
 ## ZUBEREITUNG
+
+Tabouleh zubereiten:
 
 - Minze fein hacken.
 - Tomaten würfeln.
@@ -60,22 +62,28 @@ ingredients:
 - Tomaten, Gurke, Minze und Zitronensaft in eine Salatschüssel geben.
 - Olivenöl dazu geben, gut durchmischen und mit Salz und Pfeffer würzen.
 
-- Joghurt, Erdnussbutter und Tahin in eine Schale geben und verrühren.
+Erdnuss-Joghurt-Dip zubereiten:
+
+- Joghurt, Erdnussbutter und Tahin in eine Schale geben und gut verrühren.
 - Mit Salz abschmecken.
+
+Köfte vorbereiten:
 
 - Zwiebel schälen und fein würfeln
 - Knoblauch schälen und pressen
 - Petersilie fein hacken
-- Öl in der Pfanne erhitzen und Zwiebeln 3 Minuten glasig anschwitzen
-- Knoblauch hinzufügen und weitere 2 Minuten anschwitzen
+- Öl in einer Pfanne erhitzen
+- Zwiebeln in das heiße Öl geben und 3 Minuten bei mittlerer Hitze glasig anschwitzen
+- Knoblauch hinzu geben und weitere 2 Minuten anschwitzen
 - Zwiebeln und Knoblauch aus der Pfanne zusammen mit dem Hackfleisch und der Petersilie in eine
   Schüssel geben.
 - Die Masse würzen mit Salz, Pfeffer, und Kreuzkümmel und gut durchkneten.
 - Mit den Händen das Hackfleisch in kleine, feste Laibchen formen.
 
-- Öl in einer Pfanne erhitzen und die Hackfleischlaibchen bei mittlerer Hitze für 5-8 Minuten unter
-  ständigem Wenden schön anbraten.
+Köfte braten & anrichten:
 
+- Erneut Öl in einer Pfanne erhitzen und die Hackfleischlaibchen bei mittlerer Hitze für 5-8 Minuten
+  unter regelmäßigem Wenden schön anbraten.
 - In der Zwischenzeit den Tabouleh Salat auf tiefen Tellern anrichten.
 - Die fertigen Köfte-Röllchen auf den Salat betten und mit dem Joghurtdip garnieren. Servieren und
   genießen 🤩
