@@ -8,7 +8,9 @@ const postsCollection = defineCollection({
     date: z.date().optional(),
     draft: z.boolean().optional(),
     image: z.string().optional(),
-    categories: z.array(z.enum(["Vorspeise", "Hauptgericht", "Nachspeise"])),
+    categories: z.array(
+      z.enum(["Vorspeise", "Hauptgericht", "Nachspeise", "Gebäck"])
+    ),
     tags: z.array(
       z.enum([
         "einfach",

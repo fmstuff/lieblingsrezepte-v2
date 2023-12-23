@@ -74,8 +74,12 @@ const { ingredients, servings } = Astro.props as Props;
             "data-initial-amount"
           );
           if (initialAmount) {
-            const updatedAmount =
+            let updatedAmount =
               (parseFloat(initialAmount) * newNumServings) / initialServings;
+            // Check if updatedAmount has a decimal part
+            if (Math.floor(updatedAmount) !== updatedAmount) {
+              updatedAmount = parseFloat(updatedAmount.toFixed(2));
+            }
             ingredientAmount.textContent = updatedAmount.toString();
           }
         });
