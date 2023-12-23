@@ -18,16 +18,20 @@
           "url": "/tags"
         }
       ]
-    },
-    {
-      "name": "Über uns",
-      "url": "/about"
     }
   ],
   "footer": [
     {
-      "name": "Über",
-      "url": "/about"
+      "name": "Rezepte",
+      "url": "/"
+    },
+    {
+      "name": "Kategorien",
+      "url": "/categories"
+    },
+    {
+      "name": "Schlagwörter",
+      "url": "/tags"
     },
     {
       "name": "Privacy Policy",
