@@ -6,10 +6,11 @@ import SimilarPosts from "@components/SimilarPosts.astro";
 import { getSinglePage } from "@lib/contentParser.astro";
 import similerItems from "@lib/utils/similarItems";
 import { humanize, markdownify, slugify } from "@lib/utils/textConverter";
-import { BiCategoryAlt, BiPurchaseTagAlt } from "react-icons/bi/index.js";
 
 import Ingeredients from "./components/Ingeredients.astro";
 import KeyFacts from "./components/KeyFacts.astro";
+import Tags from "./components/Tags.astro";
+import Categories from "./components/Categories.astro";
 
 const base_path = config.site.base_path;
 const posts = await getSinglePage("posts");
@@ -37,46 +38,10 @@ const {
         <h1 set:html={markdownify(title)} class="h2" />
         <ul class="mt-4 flex flex-wrap items-center justify-center text-text">
           <li class="mx-3 flex flex-wrap items-center">
-            <BiCategoryAlt className="mr-1 h-[18px] w-[18px] text-gray-600" />
-            <>
-              <ul>
-                {
-                  categories.map((category: string, i: number) => (
-                    <li class="inline-block">
-                      <a
-                        href={`${base_path}/categories/${slugify(category)}`}
-                        class="mr-2 font-medium hover:text-primary"
-                      >
-                        {humanize(category)}
-                        {i !== categories.length - 1 && ","}
-                      </a>
-                    </li>
-                  ))
-                }
-              </ul>
-            </>
+            <Categories categories={categories} />
           </li>
           <li class="mx-3 flex flex-wrap items-center">
-            <BiPurchaseTagAlt
-              className="mr-1 h-[18px] w-[18px] text-gray-600"
-            />
-            <>
-              <ul>
-                {
-                  tags.map((tag: string, i: number) => (
-                    <li class="inline-block">
-                      <a
-                        href={`${base_path}/tags/${slugify(tag)}`}
-                        class="mr-2 font-medium hover:text-primary"
-                      >
-                        {humanize(tag)}
-                        {i !== tags.length - 1 && ","}
-                      </a>
-                    </li>
-                  ))
-                }
-              </ul>
-            </>
+            <Tags tags={tags} />
           </li>
         </ul>
       </div>

@@ -1,0 +1,33 @@
+---
+import { slugify, humanize } from "@lib/utils/textConverter";
+import { BiCategoryAlt } from "react-icons/bi";
+import config from "@config/config.json";
+
+const base_path = config.site.base_path;
+
+export interface Props {
+  categories: string[];
+}
+
+const { categories } = Astro.props as Props;
+
+---
+
+<BiCategoryAlt className="mr-1 h-[18px] w-[18px] text-gray-600" />
+<>
+  <ul>
+    {
+      categories.map((category: string, i: number) => (
+        <li class="inline-block">
+          <a
+            href={`${base_path}/categories/${slugify(category)}`}
+            class="mr-2 font-medium hover:text-primary"
+          >
+            {humanize(category)}
+            {i !== categories.length - 1 && ","}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</>
