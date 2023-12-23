@@ -1,11 +1,12 @@
 ---
-import config from "@config/config.json";
 import { Image } from "astro:assets";
-import dateFormat from "@lib/utils/dateFormat";
 import { humanize, slugify } from "@lib/utils/textConverter";
-import { BiCalendarEdit, BiCategoryAlt } from "react-icons/bi/index.js";
-const { posts } = Astro.props;
+import { BiCategoryAlt } from "react-icons/bi/index.js";
+
+import config from "@config/config.json";
 const base_path = config.site.base_path;
+
+const { posts } = Astro.props;
 ---
 
 <div class="row gy-4 justify-center">
