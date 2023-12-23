@@ -1,13 +1,8 @@
 import config from "@config/config.json";
-import dateFormat from "@lib/utils/dateFormat";
 import { humanize, slugify } from "@lib/utils/textConverter";
 import Fuse from "fuse.js";
 import { useEffect, useRef, useState } from "react";
-import {
-  BiCalendarEdit,
-  BiCategoryAlt,
-  BiPurchaseTagAlt,
-} from "react-icons/bi/index.js";
+import { BiCategoryAlt, BiPurchaseTagAlt } from "react-icons/bi/index.js";
 
 const { summary_length } = config.settings;
 const base_path = config.site.base_path;
