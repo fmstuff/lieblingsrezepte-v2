@@ -1,9 +1,9 @@
 ---
 import { Image } from "astro:assets";
 import { humanize, slugify } from "@lib/utils/textConverter";
-import { BiCategoryAlt } from "react-icons/bi/index.js";
 
 import config from "@config/config.json";
+import { BiCategoryAlt } from "react-icons/bi";
 const base_path = config.site.base_path;
 
 const { posts } = Astro.props;
