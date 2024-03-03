@@ -9,7 +9,7 @@ const postsCollection = defineCollection({
     draft: z.boolean().optional(),
     image: z.string().optional(),
     categories: z.array(
-      z.enum(["Vorspeise", "Hauptgericht", "Nachspeise", "Gebäck"])
+      z.enum(["Vorspeise", "Hauptgericht", "Nachspeise", "Gebäck"]),
     ),
     tags: z.array(
       z.enum([
@@ -30,20 +30,18 @@ const postsCollection = defineCollection({
         "Sommer",
         "Herbst",
         "Winter",
-      ])
+      ]),
     ),
     preptime: z.string(),
     effort: z.string(),
     servings: z.number().int(),
-    ingredients: z
-      .array(
-        z.object({
-          title: z.string(),
-          amount: z.any(),
-          unit: z.any().optional(),
-        })
-      )
-      .optional(),
+    ingredients: z.array(
+      z.object({
+        title: z.string(),
+        amount: z.any(),
+        unit: z.any().optional(),
+      }),
+    ),
   }),
 });
 
